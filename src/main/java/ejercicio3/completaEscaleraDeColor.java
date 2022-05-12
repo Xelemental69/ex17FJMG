@@ -24,7 +24,7 @@ public class completaEscaleraDeColor {
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
 
-        ArrayList<ArrayList<Carta>> mano = CrearMapDesdeFichero();
+        ArrayList<ArrayList<Carta>> mano = CrearListaDesdeFichero();
         //
         ArrayList<String> valoresParaEscalera = new ArrayList<>();
         int contadorP = 0; //Contará las picas por mano.
@@ -61,7 +61,8 @@ public class completaEscaleraDeColor {
 
                 if (valoresCercanos(r) != -1) {
 
-                    valoresParaEscalera.add(valoresCercanos(r) + " " + letra);
+                    valoresParaEscalera.add(devolverValor(valoresCercanos(r))
+                            + " " + letra);
 
                 }else {
 
@@ -139,6 +140,29 @@ public class completaEscaleraDeColor {
         }
 
     }
+    
+    public static String devolverValor(int valor){
+        
+        switch (valor) {
+
+            case 11:
+                return "J";
+
+            case 12:
+                return "Q";
+
+            case 13:
+                return "K";
+
+            case 14:
+                return "A";
+                
+            default:
+                return valor + "";
+
+        }
+        
+    }
 
     public static void escribirEscalera(ArrayList<String> valores) throws IOException {
 
@@ -167,7 +191,7 @@ public class completaEscaleraDeColor {
 
     }
 
-    public static ArrayList<ArrayList<Carta>> CrearMapDesdeFichero() {
+    public static ArrayList<ArrayList<Carta>> CrearListaDesdeFichero() {
         //Es el ejercicio 2 copiado y pegado, pero devolvemos la lista ahora.
 
         ArrayList<ArrayList<Carta>> rondas = new ArrayList<>();
