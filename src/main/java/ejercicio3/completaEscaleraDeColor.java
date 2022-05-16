@@ -61,7 +61,7 @@ public class completaEscaleraDeColor {
 
                 if (valoresCercanos(r) != -1) {
 
-                    valoresParaEscalera.add(devolverValor(valoresCercanos(r))
+                    valoresParaEscalera.add(devolverValor(valoresCercanos(r) + 1)
                             + " " + letra);
 
                 }else {
