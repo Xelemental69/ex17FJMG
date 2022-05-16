@@ -9,13 +9,14 @@ package ejercicio4;
  * @author fcoj
  */
 import java.util.*;
+import java.time.*;
 // import com.fasterxml.jackson.databind.ObjectMapper; // version 2.11.1
 // import com.fasterxml.jackson.annotation.JsonProperty; // version 2.11.1
 /* ObjectMapper om = new ObjectMapper();
 Root[] root = om.readValue(myJsonString, Root[].class); */
 public class Precipitaciones {
     
-    private ArrayList<Integer> fecha;
+    private LocalDate fecha;
     private String estacionMeteorologica;
     private String provincia;
     private double precipitacion;
@@ -23,11 +24,11 @@ public class Precipitaciones {
     public Precipitaciones() {
     }
 
-    public ArrayList<Integer> getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(ArrayList<Integer> fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 
